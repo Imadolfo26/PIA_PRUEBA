@@ -1,0 +1,108 @@
+<!-- Importar el diseño de la plantilla -->
+{% extends 'plantilla.html' %}
+
+<!-- Enlazar archivo CSS -->
+{% load static %}
+
+<!-- Cambiar titulo a la pestaña de navegación -->
+{% block title %} Chef {% endblock %}
+
+<!-- Imagen como icono de pestaña -->
+{% block head %}
+    <link rel="shotcut icon" href="data:image/jpeg;base64,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">
+{% endblock %}
+
+<!-- Contenido individual -->
+{% block body %}
+<link rel="stylesheet" href="{% static 'pedidos/css/mesero_chef.css' %}">
+
+<br>
+<div class="container bg-white rounded-3 mt-5">
+    <!-- Botón para cerrar sesión -->
+    <form class="text-start mb-3" method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-marron">Cerrar sesión</button>
+    </form>
+
+    <h2 class="text-center">PEDIDOS</h2><br>
+
+    <!-- Tabla de pedidos -->
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col"># PEDIDO</th>
+                <th scope="col">MESA</th>
+                <th scope="col">PLATILLO</th>
+                <th scope="col">ESTADO</th>
+                <th scope="col">FECHA DE REGISTRO</th>
+                <th scope="col">REGISTRADO POR</th>
+                <th scope="col">ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pedido in pedidos %}
+            <tr>
+                <th>{{ pedido.idPedido }}</th>
+                <td>{{ pedido.mesa }}</td>
+                <td>{{ pedido.platillo }}</td>
+                <td>{{ pedido.get_estatus_display }}</td>
+                <td>{{ pedido.fechaRegistro|date:"d/m/Y H:i" }}</td>
+                <td>ID: {{ pedido.idUsuarioRegistro.idUsuario }} - {{ pedido.idUsuarioRegistro.nombre }}</td>
+                <td>
+                    {% if pedido.estatus == 1 %}  <!-- Si el pedido está en estado 'CREADO' -->
+                        <a href="{% url 'pedidos:aceptar_pedido' pedido.idPedido %}" class="btn btn-success">
+                            <i class="fa-solid fa-check" style="color: #ffffff;"></i> Aceptar
+                        </a>
+                    {% else %}
+                        <button class="btn btn-secondary" disabled><i class="fa-solid fa-check"></i> Aceptado</button>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">No hay pedidos.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Paginación -->
+    <div class="d-flex justify-content-center mt-3">
+        <nav>
+            <ul class="pagination">
+                {% if pedidos.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1" aria-label="Primera página">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ pedidos.previous_page_number }}" aria-label="Página anterior">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+
+                <li class="page-item active">
+                    <span class="page-link">{{ pedidos.number }} <span class="sr-only">(actual)</span></span>
+                </li>
+
+                {% if pedidos.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ pedidos.next_page_number }}" aria-label="Página siguiente">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ pedidos.paginator.num_pages }}" aria-label="Última página">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}
+<!-- Fin Contenido individual -->

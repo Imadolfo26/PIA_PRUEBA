@@ -1,0 +1,105 @@
+/* Fondo general de la página */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos de la tarjeta de login */
+.card {
+    background-color: #4d0303; 
+    border-radius: 10px;
+    border-color: #333333;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Estilo del encabezado de la tarjeta */
+.card-header {
+    background-color: #333333;
+    padding-top: 20px;
+}
+
+.card-header h4 {
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Estilo del cuerpo de la tarjeta */
+.card-body {
+    padding: 2rem;
+}
+
+/* Estilo para las etiquetas de los formularios */
+.form-label {
+    font-weight: bold;
+    color: #ffffff; 
+}
+
+/* Estilo para los campos de formulario */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd; 
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+/* Estilo cuando el campo tiene foco */
+.form-control:focus {
+    border-color: #4d0303; 
+    box-shadow: 0 0 5px #4d0303; 
+}
+
+/* Estilos del botón de inicio de sesión */
+.btn {
+    background-color: #333333; 
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border-color: #4d0303;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #333333; 
+    color: #fff;
+}
+
+.btn a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Enlace de registro */
+.card-body p {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff; 
+    margin-bottom: 5px;
+}
+
+.card-body a {
+    color: white;
+    font-weight: bold; 
+    font-size: 17px;
+}
+
+.card-body a:hover {
+    color: #4d0303; 
+    text-decoration: underline;
+}
+
+/* Estilo para los mensajes de error */
+.alert.alert-danger {
+    font-size: 14px;
+    height: auto; 
+    padding: 6px;
+    background-color: #FFEBEE; 
+    border-left: 4px solid #4d0303; 
+    color: #4d0303;
+}

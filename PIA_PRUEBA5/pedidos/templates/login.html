@@ -1,0 +1,57 @@
+<!-- Importar el diseño de la plantilla -->
+{% extends 'plantilla.html' %}
+
+<!-- Cargar filtros personalizados -->
+{% load filtros %}
+
+<!-- Enlazar archivo CSS -->
+{% load static %}
+
+<!-- Cambiar titulo a la pestaña de navegación -->
+{% block title %} Inicio de Sesión {% endblock %}
+ 
+<!-- Imagen como icono de pestaña -->
+{% block head %}
+    <link rel="shotcut icon" href="https://th.bing.com/th?id=OIP.19ITvzvQN9qpZzJZWD2TgAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2">
+{% endblock %}
+
+<!-- Contenido individual -->
+{% block body %}
+<link rel="stylesheet" href="{% static 'pedidos/css/login_registro.css' %}">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <br>
+            <div class="card mt-3">
+                <div class="card-header text-center">
+                    <h4><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp; Iniciar Sesión</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="txtCuenta" class="form-label">Cuenta</label>
+                            {{ form.cuenta|agregar_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtContrasena" class="form-label">Contraseña</label>
+                            {{ form.contrasena|agregar_class:"form-control" }}
+                        </div>
+                        <button type="submit" class="btn w-100">Iniciar sesión</button>
+                    </form>
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                        <strong>Error:</strong> {{ form.non_field_errors }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endif %}
+                    <p>¿Eres nuevo?</p>
+                    <center><a href="{% url 'pedidos:registro' %}">Crea tu cuenta aquí</a></center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- Fin Contenido individual -->
